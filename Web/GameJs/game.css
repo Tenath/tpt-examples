@@ -1,0 +1,29 @@
+#game-board td {
+	width: 40px;
+	height: 40px;
+	border: 1px solid black;
+}
+
+#control-board div {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	align-content: center;
+}
+
+#control-board button {
+	margin: auto;
+}
+
+.table-block {
+	display: inline-block;
+}
+
+.player-cell {
+	background-color: #ffb0b0;
+}
+
+.item-cell {
+	background-color: #b0ffb0;
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title>Tile-based game</title>
+	<script src="game.js"></script>
+	<link rel="stylesheet" href="game.css" type="text/css"/>
+</head>
+<body>
+	<div id="game-controls">
+		<div class="table-block">
+			<table id="game-board">
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+		<div class="table-block">
+			<table id="control-board">
+				<tr>
+					<td><div></div></td>
+					<td><div><button onclick="Move('N')">N</button></div></td>
+					<td><div></div></td>
+				</tr>
+				<tr>
+					<td><div><button onclick="Move('W')">W</button></div></td>
+					<td><div></div></td>
+					<td><div><button onclick="Move('E')">E</button></div></td>
+				</tr>
+				<tr>
+					<td><div></div></td>
+					<td><div><button onclick="Move('S')">S</button></div></td>
+					<td><div></div></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div id="score-block">
+		Score: 0
+	</div>
+	<button onclick="Reset()">R</button>
+	
+	<script>
+		// Данный блок кода будет отрабатывать после загрузки остальной страницы
+		PlaceItem();
+		RedrawBoard();
+	</script>
+</body>
+</html>
