@@ -1,0 +1,41 @@
+<!--<style>
+		table,th,td {
+			border: 1px solid black;
+			border-collapse:collapse;
+		}
+		
+		.goodScore {
+			background-color: green;
+		}
+		
+		.badScore {
+			background-color: red;
+		}
+</style>-->
+<link rel="stylesheet" type="text/css" href="/style.css">
+<table>
+	<tr>
+		<th>First name</th>
+		<th>Last name</th>
+		<th>Group</th>
+		<th>Math</th>
+		<th>Physics</th>
+		<th></th>
+	</tr>
+	<tr th:each="s: ${students}">
+		<td th:text="${s.FirstName}"></td>
+		<td th:text="${s.LastName}"></td>
+		<td th:text="${s.Gruppa}"></td>
+		<td th:if="${s.MathScore >= 4}" class="goodScore" th:text="${s.MathScore}"></td>
+		<td th:unless="${s.MathScore >= 4}" class="badScore" th:text="${s.MathScore}"></td>
+		<td th:if="${s.PhysicsScore >= 4}" class="goodScore" th:text="${s.PhysicsScore}"></td>
+		<td th:unless="${s.PhysicsScore >= 4}" class="badScore" th:text="${s.PhysicsScore}"></td>
+		<td>
+			<a th:href="${(#mvc.url('SC#editStudent').arg(0,s.ID)).build()}">Edit</a> |
+			<a th:href="${(#mvc.url('SC#deleteStudent').arg(0,s.ID)).build()}">Delete</a>		
+		</td>
+	</tr>
+</table>
+
+<a href="/student/add">Add a new student</a>
+

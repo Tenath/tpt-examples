@@ -1,0 +1,47 @@
+<form class="needs-validation" action="#" method="post" th:object=${student} th:action="@{/student/add}">
+	<div class="form-group">
+		<label for="firstname" class="control-label">First Name</label>
+		<!-- <input class="form-control" th:field="*{FirstName}" required></input> -->
+		<div class="invalid-tooltip">
+			Размер должен быть от 1 до 40 символов.
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="lastname" class="control-label">Last Name</label>
+		<input id="lastname" class="form-control" th:field="*{LastName}" required></input>
+		<div class="invalid-tooltip">
+			Размер должен быть от 1 до 40 символов.
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="group" class="control-label">Group</label>
+		<input id="group" class="form-control" th:field="*{Gruppa}" required></input>
+		<div class="invalid-tooltip">
+			Размер должен быть от 1 до 10 символов.
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="mathscore" class="control-label">Math score</label>
+		<select class="form-select" id="mathscore" th:field="*{MathScore}" required>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="physicsscore" class="control-label">Physics score</label>
+		<select class="form-select" id="physicsscore" th:field="*{PhysicsScore}" required>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<input type="submit" value="Add" class="btn btn-primary"></input>
+	</div>
+</form>
+<a href="/student/list">Return to student list</a>

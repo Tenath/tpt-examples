@@ -1,0 +1,73 @@
+<link rel="stylesheet" type="text/css" href="/style.css">
+<script src="/script.js"></script>
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Publisher</th>
+			<th>ISBN</th>
+			<th>Author(s)</th>
+			<th>Edition</th>
+			<th>Year</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody id="bookTable">
+	</tbody>
+</table>
+
+<button onclick="AddBook()">New book</button>
+
+<div class="editForm">
+	<form class="needs-validation" action="#">
+		<div class="form-group">
+			<input type="hidden" class="form-control" required></input>
+		</div>
+		<div class="form-group">
+			<label for="editFormTitle" class="control-label">Title</label>
+			<input id="editFormTitle" class="form-control" required></input>
+			<div class="invalid-tooltip">
+				Размер должен быть от 1 до 40 символов.
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="editFormPublisher" class="control-label">Publisher</label>
+			<input id="editFormPublisher" class="form-control" required></input>
+			<div class="invalid-tooltip">
+				Размер должен быть от 1 до 40 символов.
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="editFormISBN" class="control-label">ISBN</label>
+			<input id="editFormISBN" class="form-control" required></input>
+			<div class="invalid-tooltip">
+				Размер должен быть от 1 до 20 символов.
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="editFormAuthor" class="control-label">Author(s)</label>
+			<input id="editFormAuthor" class="form-control" required></input>
+			<div class="invalid-tooltip">
+				Размер должен быть от 1 до 20 символов.
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="editFormEdition" class="control-label">Edition</label>
+			<input id="editFormEdition" class="form-control" required></input>
+			<div class="invalid-tooltip">
+				Должно быть числовое значение больше 0.
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="editFormYearPublished" class="control-label">Year</label>
+			<input id="editFormYearPublished" class="form-control" required></input>
+			<div class="invalid-tooltip">
+				Должно быть числовое значение больше 0.
+			</div>
+		</div>
+		<div class="form-group">
+			<input id="editFormButton" value="Change" onclick="SubmitEdit()" class="btn btn-primary"></input>
+			<input value="Cancel" onclick="CancelEdit()" class="btn btn-primary"></input>
+		</div>
+	</form>
+</div>
