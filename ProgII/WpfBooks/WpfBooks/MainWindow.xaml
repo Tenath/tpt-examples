@@ -1,0 +1,85 @@
+﻿<Window x:Class="WpfBooks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfBooks"
+        mc:Ignorable="d"
+        Title="WpfBooks" Height="450" Width="800" Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="1" x:Name="dgBooks" IsReadOnly="True" SelectionMode="Single" Margin="10,10,300,10" SelectionChanged="dgBooks_SelectionChanged" Grid.ColumnSpan="2"></DataGrid>
+        <GroupBox Grid.Row="1" x:Name="grbBookEdit" HorizontalAlignment="Right" VerticalAlignment="Top"
+                  Height="360" Width="280" Margin="0,10,10,0" Grid.Column="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label Content="Title" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Grid.Column="1" Text="{Binding Title}" HorizontalAlignment="Left" Height="23" Width="150"></TextBox>
+
+                <Label Grid.Row="1" Content="Publisher" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Publisher}" HorizontalAlignment="Left" Height="23" Width="150"></TextBox>
+
+                <Label Grid.Row="2" Content="ISBN" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ISBN}" HorizontalAlignment="Left" Height="23" Width="150"></TextBox>
+
+                <Label Grid.Row="3" Content="Author" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Author}" HorizontalAlignment="Left" Height="23" Width="150"></TextBox>
+
+                <Label Grid.Row="4" Content="Edition" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Edition}" HorizontalAlignment="Left" Height="23" Width="150"></TextBox>
+
+                <Label Grid.Row="5" Content="Year" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Year}" HorizontalAlignment="Left" Height="23" Width="150"></TextBox>
+
+                <Button Grid.Row="6" x:Name="btnCancel" Content="Отмена" 
+                        VerticalAlignment="Center" Click="btnCancel_Click" ></Button>
+                <Button Grid.Row="6" Grid.Column="1" Width="80" x:Name="btnApply" Content="Применить" 
+                        VerticalAlignment="Center" Click="btnApply_Click"></Button>
+                <Button Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="0" Width="80" x:Name="btnAdd" Content="Добавить" 
+                        VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnAdd_Click"></Button>
+                <Button Grid.Row="7" Grid.Column="1" Width="80" x:Name="btnRemove" Content="Удалить" 
+                        VerticalAlignment="Center" Click="btnRemove_Click"></Button>
+            </Grid>
+        </GroupBox>
+        <Menu Grid.Row="0" HorizontalAlignment="Stretch" Height="22" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <MenuItem Header="File">
+                <MenuItem x:Name="miNew" Header="New" Click="MiNew_Click"></MenuItem>
+                <MenuItem x:Name="miOpen" Header="Open" Click="MiOpen_Click"></MenuItem>
+                <Separator/>
+                <MenuItem x:Name="miSave" Header="Save" Click="MiSave_Click"></MenuItem>
+                <MenuItem x:Name="miSaveAs" Header="Save As" Click="MiSaveAs_Click"></MenuItem>
+                <MenuItem Header="Import">
+                    <MenuItem x:Name="miImportBinary" Header="Binary" Click="MiImportBinary_Click"/>
+                    <MenuItem x:Name="miImportXML" Header="XML"/>
+                    <MenuItem x:Name="miImportJSON" Header="JSON"/>
+                </MenuItem>
+                <MenuItem Header="Export">
+                    <MenuItem x:Name="miExportBinary" Header="to binary" Click="MiExportBinary_Click"/>
+                    <MenuItem x:Name="miExportXML" Header="to XML" Click="MiExportXML_Click"/>
+                    <MenuItem x:Name="miExportJSON" Header="to JSON" Click="MiExportJSON_Click"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem x:Name="miClose" Header="Close" Click="MiClose_Click"></MenuItem>
+                <Separator/>
+                <MenuItem x:Name="miExit" Header="Exit" Click="MiExit_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>

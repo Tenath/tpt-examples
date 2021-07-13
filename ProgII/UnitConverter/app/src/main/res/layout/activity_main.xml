@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/etOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="none"
+        android:focusable="false"
+        android:textAlignment="viewEnd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgOutput" />
+
+    <TextView
+        android:id="@+id/tvInputUnits"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="m"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etInput"
+        app:layout_constraintStart_toEndOf="@+id/etInput" />
+
+    <TextView
+        android:id="@+id/tvFrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="From"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etInput" />
+
+    <TextView
+        android:id="@+id/tvTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="16dp"
+        android:text="To"
+        app:layout_constraintStart_toEndOf="@+id/tvFrom"
+        app:layout_constraintStart_toStartOf="@+id/rgOutput"
+        app:layout_constraintTop_toBottomOf="@+id/etInput" />
+
+    <EditText
+        android:id="@+id/etInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textAlignment="viewEnd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvOutputUnits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="m"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etOutput"
+        app:layout_constraintStart_toEndOf="@+id/etOutput" />
+
+    <RadioGroup
+    android:id="@+id/rgInput"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvFrom">
+
+        <RadioButton
+            android:id="@+id/rbInputM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onInSelect"
+            android:text="m" />
+
+    <RadioButton
+        android:id="@+id/rbInputCm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onInSelect"
+        android:text="cm" />
+
+    <RadioButton
+        android:id="@+id/rbInputFt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onInSelect"
+        android:text="ft" />
+
+    <RadioButton
+        android:id="@+id/rbInputIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onInSelect"
+        android:text="in" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rgOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/rgInput"
+        app:layout_constraintTop_toBottomOf="@+id/tvFrom">
+
+        <RadioButton
+            android:id="@+id/rbOutputM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onOutSelect"
+            android:text="m" />
+
+        <RadioButton
+            android:id="@+id/rbOutputCm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onOutSelect"
+            android:text="cm" />
+
+        <RadioButton
+            android:id="@+id/rbOutputFt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onOutSelect"
+            android:text="ft" />
+
+        <RadioButton
+            android:id="@+id/rbOutputIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onOutSelect"
+            android:text="in" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="onBtnClick"
+        android:text="Convert"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvInputUnits"
+        app:layout_constraintStart_toEndOf="@+id/tvInputUnits" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

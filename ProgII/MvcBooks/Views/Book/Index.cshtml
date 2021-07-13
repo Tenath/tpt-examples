@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using MvcBooks.Models;
+@{
+    //Layout = "_Layout";
+    ViewData["Title"] = "Book list";
+    var books = ViewData["Books"] as IEnumerable<Book>;
+}
+<a asp-action="Create">Add new item</a>
+<table class="table">
+    <tbody>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>ISBN</th>
+            <th>Edition</th>
+            <th>Publisher</th>
+            <th>Year</th>
+            <th>Author(s)</th>
+            <th></th>
+        </tr>
+        @foreach (Book b in books)
+        {
+            <tr>
+                <td>@b.ID</td>
+                <td>@b.Title</td>
+                <td>@b.ISBN</td>
+                <td>@b.Edition</td>
+                <td>@b.Publisher</td>
+                <td>@b.Year</td>
+                <td>@b.Author</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@b.ID">View</a> |
+                    <a asp-action="Edit" asp-route-id="@b.ID">Edit</a> | 
+                    <a asp-action="Delete" asp-route-id="@b.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
