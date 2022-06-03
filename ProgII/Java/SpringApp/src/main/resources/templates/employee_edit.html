@@ -1,0 +1,30 @@
+<form class="needs-validation" action="#" method="post" th:object=${employee} 
+	th:action="@{/employee/editCommit}">
+	<div class="form-group">
+		<input type="hidden" class="form-control" th:field="*{ID}" required></input>
+	</div>
+	<div class="form-group">
+		<label for="firstname" class="control-label">First Name</label>
+		<input id="firstname" class="form-control" th:field="*{FirstName}" required></input>
+		<div class="invalid-tooltip">Размер должен быть не более 40 символов.</div>
+	</div>
+	<div class="form-group">
+		<label for="lasstname" class="control-label">Last Name</label>
+		<input id="lastname" class="form-control" th:field="*{LastName}" required></input>
+		<div class="invalid-tooltip">Размер должен быть не более 60 символов.</div>
+	</div>
+	<div class="form-group">
+		<label for="birthday" class="control-label">Birthday</label>
+		<input id="birthday" class="form-control" th:field="*{Birthday}" required></input>
+		<div class="invalid-tooltip">Необходимо ввести корректную дату</div>
+	</div>
+	<div class="form-group">
+		<label for="salary" class="control-label">Salary</label>
+		<input id="salary" class="form-control" th:field="*{Salary}"></input>
+		<div class="invalid-tooltip">Необходимо ввести числовое значение</div>
+	</div>
+	<div class="form-group">
+		<input type="submit" value="Save changes" class="btn btn-primary"></input>
+	</div>
+</form>
+<a href="/employee/list">Return to employee list</a>

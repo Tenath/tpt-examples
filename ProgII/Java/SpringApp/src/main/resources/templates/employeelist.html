@@ -1,0 +1,23 @@
+<table>
+	<tr>
+		<th>ID</th>
+		<th>First name</th>
+		<th>Last name</th>
+		<th>Birthday</th>
+		<th>Salary</th>
+		<th></th>
+	</tr>
+	<tr th:each="e: ${employees}">
+		<td th:text="${e.ID}"/>
+		<td th:text="${e.FirstName}"/>
+		<td th:text="${e.LastName}"/>
+		<td th:text="${e.Birthday}"/>
+		<td th:text="${e.Salary}"/>
+		<td>
+			<a th:href="${(#mvc.url('EC#editEmployee')).arg(0,e.ID).build()}">Edit</a> | 
+			<a th:href="${(#mvc.url('EC#deleteEmployee')).arg(0,e.ID).build()}">Delete</a>
+		</td>
+	</tr>
+</table>
+
+<a href="/employee/add">Add new employee</a>
